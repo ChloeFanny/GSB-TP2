@@ -1,6 +1,6 @@
 parameters:
     db.host: mysql:host=localhost
-    db.name: dbname=bd_gsb
+    db.name: dbname=bd_gsb2
     db.user: root
     db.mdp: simone
 services:
