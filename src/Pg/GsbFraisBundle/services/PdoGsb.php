@@ -371,5 +371,13 @@ class PdoGsb{
             return $ligne['nb'];
 
         }
+
+        public function getListeAffectationsTablettes(){
+            $req = "select tablette.idTablette as id, tablette.typeTablette as typeTablette, tablette.memoireInt as memoireInt, tablette.memoireExt as memoireExt from tablette";
+            $stmt = PdoGsb::$monPdo->prepare($req);
+            $stmt->execute();
+            $lesLignes = $stmt->fetchAll();
+            return $lesLignes;
+        }
 }
 ?>

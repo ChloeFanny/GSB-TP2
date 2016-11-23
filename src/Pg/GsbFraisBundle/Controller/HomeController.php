@@ -21,6 +21,12 @@ class HomeController extends Controller
         $session= $this->get('request')->getSession();
         $request = $this->get('request');
         $login =  $request->request->get('login');
+        if ($login == "lvillachane"){
+            $session->set('daf',true);
+        }
+        else {
+            $session->set('daf', false);
+        }
         $mdp = $request->request->get('mdp');
         //$pdo = PdoGsb::getPdoGsb();
         $pdo = $this->get('pg_gsb_frais.pdo');
@@ -40,6 +46,23 @@ class HomeController extends Controller
         $session= $this->get('request')->getSession();
         $session->clear();
         return $this->render('PgGsbFraisBundle:Home:connexion.html.twig');
+    } 
+
+    public function listeaffectationstablettesAction(){
+        $pdo = $this->get('pg_gsb_frais.pdo');
+        $tablette = $pdo->getListeAffectationsTablettes();
+        return $this->render('PgGsbFraisBundle:Home:listeaffectationstablettes.html.twig', array("tablette" => $tablette));
+   }
+
+   public function validerfraisAction(){
+        $pdo = $this->get('pg_gsb_frais.pdo');
+        return $this->render('PgGsbFraisBundle:Home:validerfrais.html.twig');
+    }
+
+    public function historiqueAction(){
+        $pdo = $this->get('pg_gsb_frais.pdo');
+        return $this->render('PgGsbFraisBundle:Home:historique.html.twig');
+    
    }
 }
 ?>
