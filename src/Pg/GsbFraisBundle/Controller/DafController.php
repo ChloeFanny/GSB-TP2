@@ -19,6 +19,10 @@ class DafController extends Controller
     public function historiqueAction(){
         $pdo = $this->get('pg_gsb_frais.pdo');
         return $this->render('PgGsbFraisBundle:Daf:historique.html.twig');
-    
-   }
+      }
+ public function validermodiferAction()
+ {
+  $pdo = $this->get('pg_gsb_frais.pdo');
+  return $this->render('PgGsbFraisBundle:Daf:validervisiteurhistorique.html.twig');
+ }
 }
