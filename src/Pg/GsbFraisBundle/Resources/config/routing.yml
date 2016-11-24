@@ -15,21 +15,22 @@ pg_gsb_frais_saisirfrais:
     defaults: { _controller: PgGsbFraisBundle:SaisirFrais:index } 
 pg_gsb_frais_validerfraishorsforfais:
     pattern:  /validerfraishorsforfait
-    defaults: { _controller: PgGsbFraisBundle:SaisirFrais:validerfraishorsforfait }
+    defaults: { _controller: PgGsbFraisBundle:SaisirFrais:validerfraishorsforfait } 
 pg_gsb_frais_supprimerfraishorsforfait:
     pattern:  /supprimerfraishorsforfait/{id}
-    defaults: { _controller: PgGsbFraisBundle:SaisirFrais:supprimerfraishorsforfait }
+    defaults: { _controller: PgGsbFraisBundle:SaisirFrais:supprimerfraishorsforfait } 
 pg_gsb_frais_dafconnection:
     pattern:  /dafconnection 
-    defaults: { _controller: PgGsbFraisBundle:Home:index }
+    defaults: { _controller: PgGsbFraisBundle:Home:index } 
 pg_gsb_frais_affectertablettes:
     pattern:  /listeaffectationstablettes
-    defaults: { _controller: PgGsbFraisBundle:Home:listeaffectationstablettes }
-pg_gsb_frais_validerfrais:
-    pattern:  /validerfrais
-    defaults: { _controller: PgGsbFraisBundle:Home:validerfrais }
+    defaults: { _controller: PgGsbFraisBundle:Daf:listeaffectationstablettes } 
 pg_gsb_frais_historique:
     pattern:  /historique 
-    defaults: { _controller: PgGsbFraisBundle:Home:historique }
+    defaults: { _controller: PgGsbFraisBundle:Daf:historique } 
+pg_gsb_frais_validerfrais:
+    pattern:  /validerfrais
+    defaults: { _controller: PgGsbFraisBundle:Daf:validerfrais } 
+
 
 

@@ -5,7 +5,6 @@ require_once("include/fct.inc.php");
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 //use PdoGsb;
-
 class HomeController extends Controller
 {
     public function indexAction()
@@ -47,22 +46,5 @@ class HomeController extends Controller
         $session->clear();
         return $this->render('PgGsbFraisBundle:Home:connexion.html.twig');
     } 
-
-    public function listeaffectationstablettesAction(){
-        $pdo = $this->get('pg_gsb_frais.pdo');
-        $tablette = $pdo->getListeAffectationsTablettes();
-        return $this->render('PgGsbFraisBundle:Home:listeaffectationstablettes.html.twig', array("tablette" => $tablette));
-   }
-
-   public function validerfraisAction(){
-        $pdo = $this->get('pg_gsb_frais.pdo');
-        return $this->render('PgGsbFraisBundle:Home:validerfrais.html.twig');
-    }
-
-    public function historiqueAction(){
-        $pdo = $this->get('pg_gsb_frais.pdo');
-        return $this->render('PgGsbFraisBundle:Home:historique.html.twig');
-    
-   }
 }
 ?>
