@@ -372,6 +372,14 @@ class PdoGsb{
 
         }
 
+        public function getVisiteur(){
+            $req = "select visisteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom from visiteur";
+            $stmt = PdoGsb::$monPdo->prepare($req);
+            $stmt->execute();
+            $lesLignes = $stmt->fetchAll();
+            return $lesLignes;
+        }
+
         public function getListeAffectationsTablettes(){
             $req = "select tablette.idTablette as id, tablette.typeTablette as typeTablette, tablette.memoireInt as memoireInt, tablette.memoireExt as memoireExt from tablette";
             $stmt = PdoGsb::$monPdo->prepare($req);

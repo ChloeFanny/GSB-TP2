@@ -18,11 +18,13 @@ class DafController extends Controller
     }
     public function historiqueAction(){
         $pdo = $this->get('pg_gsb_frais.pdo');
-        return $this->render('PgGsbFraisBundle:Daf:historique.html.twig');
+        $visiteur = $pdo->getVisiteur();
+        return $this->render('PgGsbFraisBundle:Daf:historique.html.twig', array("visiteur"=> $visiteur));
       }
- public function validerhistoriquerAction()
- {
-  $pdo = $this->get('pg_gsb_frais.pdo');
-  return $this->render('PgGsbFraisBundle:Daf:validervisiteurhistorique.html.twig');
- }
+    public function validerhistoriqueAction()
+    {
+        $pdo = $this->get('pg_gsb_frais.pdo');
+        $visiteur = $pdo->getVisiteur();
+        return $this->render('PgGsbFraisBundle:Daf:validervisiteurhistorique.html.twig', array("visiteur"=> $visiteur));
+    }
 }
