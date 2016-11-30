@@ -31,6 +31,9 @@ pg_gsb_frais_historique:
 pg_gsb_frais_validerfrais:
     pattern:  /validerfrais
     defaults: { _controller: PgGsbFraisBundle:Daf:validerfrais } 
+pg_gsb_frais_validerhistorique:
+    pattern:  /validerhistorique 
+    defaults: { _controller: PgGsbFraisBundle:Daf:validerhistorique } 
 
 
 
