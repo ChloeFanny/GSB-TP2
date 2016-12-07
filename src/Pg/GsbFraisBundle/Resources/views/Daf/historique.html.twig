@@ -30,7 +30,9 @@
 
 <h2>Historique des tablettes</h2>
 <FORM action="{{path('pg_gsb_frais_validerhistorique')}}">
-   <SELECT name="personne" >
+
+   <SELECT name="personne" id="personne" size="1">
+   <option value="Choix du visiteur" select="selected">Choix du visiteur</option>
     {% for visiteur in visiteur %}
           <option value="{{visiteur.id}}">{{visiteur.nom}} {{visiteur.prenom}}</option>
     {% endfor %}
